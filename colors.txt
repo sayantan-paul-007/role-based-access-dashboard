@@ -1,0 +1,17 @@
+This is just for start and afterwards i will change it as per colorify
+
+Light mode
+- header, cards, sidebar - #ffffff
+- panel bg - #f3f4f6
+- accent - #5750f1
+- accent highlight - #5750f1(op-12)
+- sidebar text - #4b5563
+- selected sidebar text - #5750f1
+
+Dark mode
+- header, cards, sidebar - #122031
+- panel bg - #020d1a
+- accent - #5750f1
+- accent highlight - #ffffff1a
+- sidebar text - #4b5563
+- selected sidebar text - #ffffff
