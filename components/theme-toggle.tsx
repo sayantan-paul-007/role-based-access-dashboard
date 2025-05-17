@@ -12,7 +12,7 @@ const { theme, setTheme } = useTheme();
   return (
    <>
    {mounted && (
-        <button className="border p-3 rounded-full" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+        <button className="border p-2 rounded-full" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
           {theme === 'light' ? (
             <Moon size={20}  />
           ) : (
