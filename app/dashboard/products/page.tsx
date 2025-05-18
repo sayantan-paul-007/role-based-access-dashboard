@@ -12,24 +12,24 @@ export default function Products(){
         </div>
         <table className="hidden md:table bg-foreground dark:bg-dark-foreground  rounded-xl w-full ">
             <thead className=" text-left text-sm font-normal">
-                <tr>
-                    <th scope="col" className="p-4 w-fit whitespace-nowrap ">Products</th>
-                    <th scope="col" className="p-4 w-fit whitespace-nowrap ">Description</th>
-                    <th scope="col" className="p-4 w-fit whitespace-nowrap ">Price</th>
-                    <th scope="col" className="p-4 w-fit whitespace-nowrap ">Stock</th>
-                    <th scope="col" className="p-4 w-fit whitespace-nowrap ">Categories</th>
-                    <th scope="col" className="p-4 w-fit whitespace-nowrap "></th>
+                <tr className="border-b border-gray-300 dark:border-gray-600 ">
+                    <th scope="col" className="py-4 px-6 w-fit whitespace-nowrap ">Products</th>
+                    <th scope="col" className="py-4 px-6 w-fit whitespace-nowrap ">Description</th>
+                    <th scope="col" className="py-4 px-6 w-fit whitespace-nowrap ">Price</th>
+                    <th scope="col" className="py-4 px-6 w-fit whitespace-nowrap ">Stock</th>
+                    <th scope="col" className="py-4 px-6 w-fit whitespace-nowrap ">Categories</th>
+                    <th scope="col" className="py-4 px-6 w-fit whitespace-nowrap "></th>
                 </tr>
             </thead>
             <tbody className="w-full border-b text-textPrimary dark:text-dark-textPrimary border-red-100 py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
                 >
-                <tr>
-                    <td className="p-4 w-fit whitespace-nowrap">fdfskjhj</td>
-                    <td className="p-4 w-fit whitespace-nowrap">fjhkjsdh</td>
-                    <td className="p-4 w-fit whitespace-nowrap">fdfskjhj</td>
-                    <td className="p-4 w-fit whitespace-nowrap">fjhkjsdh</td>
-                    <td className="p-4 w-fit whitespace-nowrap">fjhkjsdh</td>
-                    <td className="p-4 flex flex-row gap-5 justify-center whitespace-nowrap">   
+                <tr >
+                    <td className="py-4 px-6 w-fit whitespace-nowrap">fdfskjhj</td>
+                    <td className="py-4 px-6 w-fit whitespace-nowrap">fjhkjsdh</td>
+                    <td className="py-4 px-6 w-fit whitespace-nowrap">fdfskjhj</td>
+                    <td className="py-4 px-6 w-fit whitespace-nowrap">fjhkjsdh</td>
+                    <td className="py-4 px-6 w-fit whitespace-nowrap">fjhkjsdh</td>
+                    <td className="py-4 px-6 flex flex-row gap-5 justify-center whitespace-nowrap">   
                     <button className="border border-slate-300 dark:border-gray-600 p-2 rounded-md">
                         <EditIcon size={16}/>
                     </button>
@@ -41,12 +41,12 @@ export default function Products(){
                     </td>
                 </tr>
                 <tr>
-                    <td className="p-4 w-fit whitespace-nowrap">fdfskjhj</td>
-                    <td className="p-4 w-fit whitespace-nowrap">fjhkjsdh</td>
-                    <td className="p-4 w-fit whitespace-nowrap">fdfskjhj</td>
-                    <td className="p-4 w-fit whitespace-nowrap">fjhkjsdh</td>
-                    <td className="p-4 w-fit whitespace-nowrap">fjhkjsdh</td>
-                    <td className="p-4 flex flex-row gap-5 justify-center whitespace-nowrap">   
+                    <td className="py-4 px-6 w-fit whitespace-nowrap">fdfskjhj</td>
+                    <td className="py-4 px-6 w-fit whitespace-nowrap">fjhkjsdh</td>
+                    <td className="py-4 px-6 w-fit whitespace-nowrap">fdfskjhj</td>
+                    <td className="py-4 px-6 w-fit whitespace-nowrap">fjhkjsdh</td>
+                    <td className="py-4 px-6 w-fit whitespace-nowrap">fjhkjsdh</td>
+                    <td className="py-4 px-6 flex flex-row gap-5 justify-center whitespace-nowrap">   
                     <button className="border border-slate-300 dark:border-gray-600 p-2 rounded-md">
                         <EditIcon size={16}/>
                     </button>
