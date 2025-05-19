@@ -14,7 +14,7 @@ export default function RootLayout({
         className={`${inter.className} antialiased`}
       >
         <ThemeProvider attribute="class">
-          {children}
+          {children} 
         </ThemeProvider>
         
       </body>

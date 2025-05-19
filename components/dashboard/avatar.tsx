@@ -1,7 +1,8 @@
 'use client';
-import { LogOut } from 'lucide-react';
-import Link from 'next/link';
+// import { LogOut } from 'lucide-react';
+// import Link from 'next/link';
 import { useState } from 'react';
+import LogoutButton from './logout';
 export default function Avatar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -38,10 +39,11 @@ export default function Avatar() {
           </div>
           <ul className="py-2 px-4">
             <li>
-              <Link href='/login' className='flex text-red-500 gap-2 py-2'>
+              <LogoutButton />
+              {/* <Link href='/login' className='flex text-red-500 gap-2 py-2'>
                <LogOut />
                <p> Log Out</p>
-              </Link>
+              </Link> */}
             </li>
           </ul>
         </div>
