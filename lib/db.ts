@@ -1,24 +1,42 @@
 import mongoose from "mongoose";
+
 const MONGODB_URI = process.env.MONGODB_URI as string;
+
 if (!MONGODB_URI) {
   throw new Error("Please define the MONGODB_URI in .env.local");
 }
-let cached = (global as any).mongoose;
-if (!cached) {
-  cached = (global as any).mongoose = { conn: null, promise: null };
+
+interface MongooseCache {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
 }
+
+// Extend globalThis to include our custom cache type
+declare global {
+  var mongooseCache: MongooseCache | undefined;
+}
+
+// Initialize cache if it doesn't exist
+const cached: MongooseCache = globalThis.mongooseCache ?? {
+  conn: null,
+  promise: null,
+};
+
+globalThis.mongooseCache = cached;
+
 async function connectToDB() {
   if (cached.conn) {
     return cached.conn;
   }
+
   if (!cached.promise) {
     cached.promise = mongoose
       .connect(MONGODB_URI, {
-        dbName: "dashboard-data", 
+        dbName: "dashboard-data",
         bufferCommands: false,
       })
       .then((mongoose) => {
-        console.log("MongoDB Connected");
+        console.log("✅ MongoDB Connected");
         return mongoose;
       });
   }

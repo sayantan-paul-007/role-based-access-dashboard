@@ -34,6 +34,7 @@ export default function LoginForm() {
         alert(data.error || 'Something went wrong');
       }
     } catch (err) {
+      console.error('Network error', err);
       alert('Network error');
     }
   };

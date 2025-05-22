@@ -1,4 +1,4 @@
-import { DeleteIcon, EditIcon, Plus, Trash } from "lucide-react";
+import { EditIcon, Plus, Trash } from "lucide-react";
 
 export default function Category(){
     return(

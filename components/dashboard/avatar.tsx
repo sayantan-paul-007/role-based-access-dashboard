@@ -1,7 +1,8 @@
 'use client';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import LogoutButton from './logout';
 import { useUser } from "@/context/UserContext"
+import Image from 'next/image';
 export default function Avatar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -12,11 +13,7 @@ export default function Avatar() {
         onClick={toggleDropdown}
         className="flex items-center space-x-2"
       >
-        <img
-          src="https://i.pravatar.cc/150?img=3" // Replace with your image path
-          alt="User Avatar"
-          className="w-8 h-8 rounded-full"
-        />
+        <Image src="https://i.pravatar.cc/150?img=3" width={32} height={32} className="w-8 h-8 rounded-full" alt="User Avatar" />
         <span>{user? user.username:"Loading username....."}</span>
         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
           <path d="M5.25 7.25L10 12.25L14.75 7.25H5.25Z" />

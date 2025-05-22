@@ -1,4 +1,4 @@
-import { DeleteIcon, EditIcon, Plus, Trash } from "lucide-react";
+import { EditIcon} from "lucide-react";
 export default function Inventory(){
     return(
        <main className="px-16 pt-4 bg-background dark:bg-dark-background h-full">

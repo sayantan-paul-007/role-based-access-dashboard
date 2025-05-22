@@ -20,6 +20,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json({ user });
   } catch (err) {
+    console.error('JWT verification failed:', err);
     return NextResponse.json({ user: null }, { status: 401 });
   }
 }
