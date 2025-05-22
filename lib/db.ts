@@ -11,12 +11,10 @@ interface MongooseCache {
   promise: Promise<typeof mongoose> | null;
 }
 
-// Extend globalThis to include our custom cache type
 declare global {
   var mongooseCache: MongooseCache | undefined;
 }
 
-// Initialize cache if it doesn't exist
 const cached: MongooseCache = globalThis.mongooseCache ?? {
   conn: null,
   promise: null,
