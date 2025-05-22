@@ -12,7 +12,7 @@ export default function Category(){
         <table className="hidden md:table bg-foreground dark:bg-dark-foreground  rounded-xl w-full ">
             <thead className=" text-left text-sm font-normal">
                 <tr>
-                    <th scope="col" className="p-4 w-fit whitespace-nowrap ">Products</th>
+                    <th scope="col" className="p-4 w-fit whitespace-nowrap ">Category</th>
                     <th scope="col" className="p-4 w-fit whitespace-nowrap ">Description</th>
                    
                     <th scope="col" className="p-4 w-fit whitespace-nowrap "></th>

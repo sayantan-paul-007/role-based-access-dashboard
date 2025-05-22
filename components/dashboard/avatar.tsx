@@ -1,11 +1,11 @@
 'use client';
-// import { LogOut } from 'lucide-react';
-// import Link from 'next/link';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import LogoutButton from './logout';
+import { useUser } from "@/context/UserContext"
 export default function Avatar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
+  const {user} =useUser()
   return (
     <div className="relative inline-block text-left">
      <button
@@ -17,7 +17,7 @@ export default function Avatar() {
           alt="User Avatar"
           className="w-8 h-8 rounded-full"
         />
-        <span>John Smith</span>
+        <span>{user? user.username:"Loading username....."}</span>
         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
           <path d="M5.25 7.25L10 12.25L14.75 7.25H5.25Z" />
         </svg>
@@ -32,7 +32,7 @@ export default function Avatar() {
                 className="w-10 h-10 rounded-full"
               />
               <div>
-                <p className="font-semibold">John Smith</p>
+                <p className="font-semibold">{user? user.username:"Loading name..."}</p>
                 <p className="text-sm text-gray-500">johnson@nextadmin.com</p>
               </div>
             </div>

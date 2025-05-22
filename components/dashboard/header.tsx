@@ -11,7 +11,7 @@ export default function Header(){
           
            
             <div>
-                <h1 className="text-2xl font-bold ">{`Welcome to ${user?.role} Dashboard`}</h1>
+                <h1 className="text-2xl font-bold ">{user ? `Welcome to ${user.role.toUpperCase()} Dashboard` : 'Loading user...'}</h1>
             </div>
             <div className="flex gap-5">
                 <Themetoggle />

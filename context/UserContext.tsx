@@ -4,8 +4,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { jwtDecode } from 'jwt-decode';
 
 type User = {
-  name: string;
-  email: string;
+  username: string;
   role: string;
 };
 
@@ -22,27 +21,22 @@ const UserContext = createContext<UserContextType>({
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
 
-  useEffect(() => {
-    const token = document.cookie
-      .split('; ')
-      .find((row) => row.startsWith('token='))
-      ?.split('=')[1];
-
-    if (token) {
-      try {
-        const decoded: any = jwtDecode(token);
-        setUser({
-          name: decoded.name,
-          email: decoded.email,
-          role: decoded.role,
-        });
-        console.log('Decoded:', decoded);
-      } catch (error) {
-        console.error('Error decoding token:', error);
+ useEffect(() => {
+  async function fetchUser() {
+    try {
+      const res = await fetch('/api/me');
+      if (res.ok) {
+        const data = await res.json();
+        setUser(data.user);
+      } else {
         setUser(null);
       }
+    } catch (err) {
+      setUser(null);
     }
-  }, []);
+  }
+  fetchUser();
+}, []);
 
   return (
     <UserContext.Provider

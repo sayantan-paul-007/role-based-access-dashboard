@@ -9,17 +9,11 @@ export default function RootLayout({
   return (
   <UserProvider>
     <div className="flex">
-        
         <Sidebar />
         <div className="flex flex-col w-full">
             <Header />
-            
               {children}
-
-         
-        
         </div>
-        
-    </div>
-       </UserProvider>
+      </div>
+    </UserProvider>
   )}

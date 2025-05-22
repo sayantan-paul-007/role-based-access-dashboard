@@ -2,7 +2,7 @@ import { DeleteIcon, EditIcon, Plus, Trash } from "lucide-react";
 import Link from "next/link";
 export default function Products(){
     return(
- <main className="px-16 pt-4 bg-background dark:bg-dark-background h-full">
+ <main className="px-16 pt-4 bg-background dark:bg-dark-background h-screen">
         <div className=" flex justify-between py-4">
         <h2 className="text-2xl font-bold">Products</h2>
         <Link href='/dashboard/products/create'>
