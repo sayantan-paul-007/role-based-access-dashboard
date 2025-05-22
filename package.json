@@ -41,8 +41,6 @@
     "typescript": "^5"
   },
   "engines": {
-  "node": "20.x",
-  "pnpm": "10.10.0"
-},
-  "packageManager":   "pnpm@10.10.0"
+  "node": "20.x"
+}
 }
