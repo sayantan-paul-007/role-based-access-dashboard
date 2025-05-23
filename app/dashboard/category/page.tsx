@@ -1,5 +1,4 @@
 import { EditIcon, Plus, Trash } from "lucide-react";
-
 export default function Category(){
     return(
        <main className="px-16 pt-4 bg-background dark:bg-dark-background h-full">

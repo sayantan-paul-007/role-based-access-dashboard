@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Home() {
 return(
   <main className="bg-background dark:bg-dark-background h-screen">
-    <div className="flex px-6 py-4 justify-between">
+    <div className="flex px-6 py-8 justify-between">
       <Logo />
        <Themetoggle />
     </div>
