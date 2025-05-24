@@ -1,11 +1,11 @@
-import AddButton from "@/components/addbutton";
+import {CreateButton} from "@/components/buttons";
 import { EditIcon, Plus, Trash } from "lucide-react";
 export default function Products(){
     return(
  <main className="px-16 pt-4 bg-background dark:bg-dark-background h-full">
         <div className=" flex justify-between py-4">
         <h2 className="text-2xl font-bold">Products</h2>
-        <AddButton href="/dashboard/products/create"><span><Plus size={20} /></span> Add Products</AddButton>
+        <CreateButton href="/dashboard/products/create"><span><Plus size={20} /></span> Add Products</CreateButton>
         </div>
         <table className="hidden md:table bg-foreground dark:bg-dark-foreground  rounded-xl w-full ">
             <thead className=" text-left text-sm font-normal">
