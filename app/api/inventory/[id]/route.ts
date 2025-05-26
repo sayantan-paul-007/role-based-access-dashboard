@@ -18,7 +18,7 @@ const { id } = await params;
 
 export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
   await connectToDB();
-  const { id } = params;
+  const { id } = await params;
 
   try {
     const data = await request.json();

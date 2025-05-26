@@ -30,7 +30,7 @@ export async function GET(
   req: Request,
   { params }: { params: { id: string } }
 ) {
-  const { id } = params;
+  const { id } = await params;
   try {
     await connectToDB();
     const category = await Category.findById(id);
