@@ -3,15 +3,15 @@ import connectToDB from "@/lib/db";
 import Category from "@/models/Category";
 export async function PUT(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   await connectToDB();
-
+ const {id} = await params
   const { name, description } = await req.json();
 
   try {
     const updatedCategory = await Category.findByIdAndUpdate(
-      params.id,
+      id,
       { name, description },
       { new: true }
     );
@@ -26,24 +26,20 @@ export async function PUT(
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
-type Params = {
-  params: {
-    id: string;
-  };
-};
-
-export async function GET(request: Request, { params }: Params) {
+export async function GET(
+  req: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params;
   try {
     await connectToDB();
-    const category = await Category.findById(params.id);
-
+    const category = await Category.findById(id);
     if (!category) {
-      return NextResponse.json({ message: "Category not found" }, { status: 404 });
+      return NextResponse.json({ error: "Category not found" }, { status: 404 });
     }
-
-    return NextResponse.json(category);
-  } catch (error) {
-    console.error("Error fetching category:", error);
-    return NextResponse.json({ message: "Error fetching category" }, { status: 500 });
+    return NextResponse.json({ category });
+  } catch (err) {
+    console.error("Server error:", err);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

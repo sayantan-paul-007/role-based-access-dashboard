@@ -16,7 +16,7 @@ export async function GET(req: Request,
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   }
 }
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   await connectToDB();
   const { id } = await params;
 

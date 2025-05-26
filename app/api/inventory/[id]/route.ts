@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import connectToDB from "@/lib/db";
 import Inventory from "@/models/Inventory";
 
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, { params }: { params: Promise<{ id: string }>}) {
   await connectToDB();
 const { id } = await params;
   try {
@@ -17,7 +17,7 @@ const { id } = await params;
   }
 }
 
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   await connectToDB();
   const { id } = await params;
 
