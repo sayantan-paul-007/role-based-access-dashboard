@@ -9,13 +9,13 @@ type AddButtonProps = {
 };
 type EditButtonProps={
   href: string;
+  children: React.ReactNode;
+}
+type DeleteButtonProps = {
   id: string;
   children: React.ReactNode;
-}
-type DeleteButtonProps ={
-  id:string;
-  children: React.ReactNode;
-}
+  onDelete: (id: string) => void;
+};
 const CreateButton = ({ href, children }: AddButtonProps) => {
   const { user } = useUser();
 
@@ -31,7 +31,7 @@ const CreateButton = ({ href, children }: AddButtonProps) => {
     </Link>
   );
 };
-const EditButton = ({ href, children, id }: EditButtonProps) => {
+const EditButton = ({ href, children}: EditButtonProps) => {
   const { user } = useUser();
 
   if (!user || user.role !== 'master') {
@@ -39,24 +39,34 @@ const EditButton = ({ href, children, id }: EditButtonProps) => {
   }
 
   return (
-    <Link href={href}>
+   <Link href={href}>
       <button className="border border-slate-300 dark:border-gray-600 p-2 rounded-md">
         {children}
       </button>
     </Link>
   );
 };
-const DeleteButton =({id, children}:DeleteButtonProps) =>{
-const { user } = useUser();
 
-  if (!user || user.role !== 'master') {
-    return null; 
-  }
-  return(
-    <button className='border border-slate-300 dark:border-gray-600 p-2 rounded-md'>
+
+const DeleteButton = ({ id, children, onDelete }: DeleteButtonProps) => {
+  const { user } = useUser();
+
+  if (!user || user.role !== 'master') return null;
+
+  const handleClick = () => {
+    if (confirm('Are you sure you want to delete this item?')) {
+      onDelete(id);
+    }
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="border border-slate-300 dark:border-gray-600 p-2 rounded-md"
+    >
       {children}
     </button>
-  )
+  );
+};
 
-}
 export {CreateButton, EditButton, DeleteButton};

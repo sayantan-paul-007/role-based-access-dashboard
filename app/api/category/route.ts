@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import Category from "@/models/Category"; // Adjust path
+import Category from "@/models/Category";
 import connectToDB from "@/lib/db";
 
 export async function GET() {
    try {
-    await connectToDB(); // make sure your MongoDB is connected
+    await connectToDB(); 
     const categories = await Category.find();
     return NextResponse.json(categories);
   } catch (error) {
