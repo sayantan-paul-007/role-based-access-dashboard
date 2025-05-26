@@ -11,6 +11,7 @@ export async function POST(req: Request) {
     const inventory = await Inventory.create(body);
     return NextResponse.json({ inventory });
   } catch (err) {
+    console.error("Server error:", err);
     return NextResponse.json({ error: "Failed to create inventory" }, { status: 500 });
   }
 }

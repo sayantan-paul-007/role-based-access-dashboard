@@ -20,6 +20,7 @@ export async function POST(req: Request) {
     const categories = await Category.create(body);
     return NextResponse.json({ categories });
   } catch (err) {
+    console.error("Server error:", err);
     return NextResponse.json({ error: "Failed to create categories" }, { status: 500 });
   }
 }

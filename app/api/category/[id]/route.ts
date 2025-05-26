@@ -39,6 +39,7 @@ export async function GET(
     }
     return NextResponse.json({ category });
   } catch (err) {
+    console.error("Server error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

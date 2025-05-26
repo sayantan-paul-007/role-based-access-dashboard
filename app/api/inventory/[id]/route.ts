@@ -12,6 +12,7 @@ const { id } = await params;
     }
     return NextResponse.json(inventory);
   } catch (error) {
+    console.error("Server error:", error);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

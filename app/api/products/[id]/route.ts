@@ -12,6 +12,7 @@ export async function GET(req: Request,
     if (!product) return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json(product);
   } catch (error) {
+    console.error("Server error:", error);
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   }
 }
