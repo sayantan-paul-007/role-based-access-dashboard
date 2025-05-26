@@ -26,20 +26,24 @@ export async function PUT(
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
-export async function GET(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
-  const { id } = await params;
+type Params = {
+  params: {
+    id: string;
+  };
+};
+
+export async function GET(request: Request, { params }: Params) {
   try {
     await connectToDB();
-    const category = await Category.findById(id);
+    const category = await Category.findById(params.id);
+
     if (!category) {
-      return NextResponse.json({ error: "Category not found" }, { status: 404 });
+      return NextResponse.json({ message: "Category not found" }, { status: 404 });
     }
-    return NextResponse.json({ category });
-  } catch (err) {
-    console.error("Server error:", err);
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+
+    return NextResponse.json(category);
+  } catch (error) {
+    console.error("Error fetching category:", error);
+    return NextResponse.json({ message: "Error fetching category" }, { status: 500 });
   }
 }
