@@ -2,13 +2,19 @@ import { NextResponse } from "next/server";
 import Category from "@/models/Category";
 import connectToDB from "@/lib/db";
 
-export async function GET() {
-   try {
-    await connectToDB(); 
-    const categories = await Category.find();
-    return NextResponse.json(categories);
+export async function GET(req: Request, { params }: { params: { id: string } }) {
+  try {
+    await connectToDB();
+    const { id } = await params;
+    const category = await Category.findById(id);
+    
+    if (!category) {
+      return NextResponse.json({ message: "Category not found" }, { status: 404 });
+    }
+
+    return NextResponse.json(category);
   } catch (error) {
-    return NextResponse.json({ message: "Error fetching categories", error }, { status: 500 });
+    return NextResponse.json({ message: "Error fetching category", error }, { status: 500 });
   }
 }
 export async function POST(req: Request) {
