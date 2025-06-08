@@ -1,7 +1,6 @@
 'use client';
-import { MoonOutlined } from "@/icons/Moon";
-import { Sun } from "@/icons/Sun";
 import { useTheme } from "next-themes";
+import { Moon,Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 export default function Themetoggle(){
 const { theme, setTheme } = useTheme(); 
@@ -15,9 +14,9 @@ const { theme, setTheme } = useTheme();
    {mounted && (
         <button className="p-2 rounded-full" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
           {theme === 'light' ? (
-            <MoonOutlined fill="bg-foreground" height={28} width={28} />
+            <Moon size={24} />
           ) : (
-            <Sun fill="bg-foreground" height={28} width={28} />
+            <Sun size={24} />
           )}
         </button> )}
    </>

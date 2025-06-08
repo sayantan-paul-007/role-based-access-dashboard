@@ -11,6 +11,7 @@ import {
 import axios from 'axios';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { EditIcon, Plus } from 'lucide-react';
 const CategoryPage = () => {
     const CategoryHeader = ['Category','Description']
     interface Category {
@@ -33,7 +34,7 @@ const CategoryPage = () => {
     <main className='p-8'>
       <section className='flex items-center justify-between mb-4'>
         <h1 className='text-2xl font-bold mb-4'>Categories</h1>
-        <Link href='/dashboard/category/create'><Button>Add Categories</Button></Link>
+        <Link href='/dashboard/category/create'><Button><span><Plus size={24} /></span>Add Categories</Button></Link>
       </section>
 
         <Table className='border  text-md border-border' >
@@ -49,6 +50,13 @@ const CategoryPage = () => {
         <TableRow key={category._id} className="border-b border-border hover:bg-muted">
           <TableCell className="p-4  w-fit whitespace-nowrap">{category.name}</TableCell>
           <TableCell className="p-4  w-fit whitespace-nowrap">{category.description}</TableCell>
+          <TableCell className="p-4  w-fit whitespace-nowrap">
+            <Link href={`/dashboard/category/edit/${category._id}`}>
+               <Button variant='outline' className='hover:bg-primary hover:text-primary-foreground text-primary shadow-none'><EditIcon size={16} /></Button>  
+            </Link> 
+            
+          </TableCell>
+          
         </TableRow>
       ))  
     }
