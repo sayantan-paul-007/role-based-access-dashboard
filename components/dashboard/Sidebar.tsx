@@ -48,7 +48,7 @@ const AppSidebar = () => {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.name}>
-                  <SidebarMenuButton asChild className="flex items-center gap-3 h-12">
+                  <SidebarMenuButton asChild className="flex items-center gap-3 h-10">
                     <Link href={item.href}>
                       <item.icon style={{ width: 20, height: 20 }} />
                       <span className="text-md">{item.name}</span>

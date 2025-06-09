@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { EditIcon } from 'lucide-react';
 const InventoryPage = () => {
-  const InventoryHeader = ['Product Name','Available Units', 'Sold Units']
+  const InventoryHeader = ['Product Name','Available Units', 'Sold Units','']
     interface Products {
                 _id: string;
                 name: string;

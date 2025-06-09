@@ -1,8 +1,14 @@
+import CreateProductForm from '@/components/products/create-form'
 import React from 'react'
 
 const CreateProduct = () => {
   return (
-    <div>CreateProduct</div>
+    <main className='p-8'>
+      <section>
+        <h1 className='text-2xl font-bold mb-4'>Create Product</h1>
+        <CreateProductForm />
+      </section>
+    </main>
   )
 }
 
