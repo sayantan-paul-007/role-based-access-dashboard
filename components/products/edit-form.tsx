@@ -130,12 +130,12 @@ const form = useForm<FormSchemaType>({
                   </FormItem>
                 )}
               />
-
-              <FormField
+<div className="flex gap-4">
+ <FormField
                 control={form.control}
                 name="price"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="flex-1">
                     <FormLabel>Price</FormLabel>
                     <FormControl>
                       <Input type="number" placeholder="Product Price" {...field} />
@@ -149,7 +149,7 @@ const form = useForm<FormSchemaType>({
                 control={form.control}
                 name="categoryId"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className='flex-1'>
                     <FormLabel>Category</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
@@ -169,6 +169,8 @@ const form = useForm<FormSchemaType>({
                   </FormItem>
                 )}
               />
+</div>
+             
 
               <Button type="submit">
                 Update Product

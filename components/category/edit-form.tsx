@@ -19,7 +19,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
-// Zod schema
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "Category name must be at least 2 characters.",

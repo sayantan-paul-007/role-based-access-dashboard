@@ -11,8 +11,10 @@ import {
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { EditIcon } from 'lucide-react';
+import { useUser } from '@/context/userContext';
 const InventoryPage = () => {
-  const InventoryHeader = ['Product Name','Available Units', 'Sold Units','']
+  const { user } = useUser();
+  const InventoryHeader = ['Product Name','Available Units', 'Sold Units']
     interface Products {
                 _id: string;
                 name: string;
@@ -46,9 +48,9 @@ const InventoryPage = () => {
 
         <Table className='border  text-md border-border' >
   <TableHeader >
-    <TableRow className='hover:bg-muted'>
-        {InventoryHeader.map((head)=>(
-          <TableHead key={head} scope="col" className="px-4 h-12 font-medium whitespace-nowrap ">{head}</TableHead>))}
+    <TableRow>
+        {InventoryHeader.map((head, index)=>(
+          <TableHead key={head} scope="col" className={`px-4 h-12 font-medium whitespace-nowrap ${index === 0 ? 'text-left' : 'text-center'}`}>{head}</TableHead>))}
   </TableRow>
   </TableHeader>
   <TableBody>
@@ -56,9 +58,9 @@ const InventoryPage = () => {
       inventory.map((inven) => (
         <TableRow key={inven._id} className="border-b border-border hover:bg-muted">
           <TableCell className="p-4  w-fit whitespace-nowrap">{products.find((prod) => prod._id === inven.productId)?.name || "Unknown"}</TableCell>
-          <TableCell className="p-4  w-fit whitespace-nowrap">{inven.availableUnits}</TableCell>
-          <TableCell className="p-4  w-fit whitespace-nowrap">{inven.soldUnits}</TableCell>
-          <TableCell className="p-4  w-fit whitespace-nowrap">
+          <TableCell className="p-4  w-fit whitespace-nowrap text-center">{inven.availableUnits}</TableCell>
+          <TableCell className="p-4  w-fit whitespace-nowrap text-center">{inven.soldUnits}</TableCell>
+          <TableCell className={`p-4  w-fit whitespace-nowrap ${user?.role ==='master'?"":'hidden'}`}>
             <Link href={`/dashboard/inventory/edit/${inven._id}`}>
                <Button variant='outline' className='hover:bg-primary hover:text-primary-foreground text-primary shadow-none'><EditIcon size={16} /></Button>  
             </Link>
