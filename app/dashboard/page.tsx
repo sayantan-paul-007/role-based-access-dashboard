@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card"
 const DashboardPage = () => {
   return (
-    <main className=' w-full grid-cols-1 grid md:grid-cols-3 gap-4 p-4'>
+    <main className=' w-full grid-cols-1 grid md:grid-cols-3 gap-4 p-8'>
       <div>
         <Card>
         <CardHeader>

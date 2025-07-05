@@ -1,15 +1,18 @@
-import Themetoggle from "@/components/theme-toggle"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import Footer from "@/components/Footer"
+import Hero from "@/components/Hero"
+import Navbar from "@/components/Navbar"
 
 const Home = () => {
   return (
-    <main>
-      <Themetoggle />
-      <Link href="/login">
-      <Button>Login</Button>
-      </Link>
+    <>
+    <header>
+      <Navbar/>
+    </header>
+    <main >
+      <Hero />
+      <Footer />
     </main>
+    </>
   )
 }
 

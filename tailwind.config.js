@@ -15,57 +15,57 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
-  			background: 'oklch(var(--background))',
-  			foreground: 'oklch(var(--foreground))',
+  			background: 'hsl(var(--background) / <alpha-value>)',
+  			foreground: 'hsl(var(--foreground) / <alpha-value>)',
   			card: {
-  				DEFAULT: 'oklch(var(--card))',
-  				foreground: 'oklch(var(--card-foreground))'
+  				DEFAULT: 'hsl(var(--card) / <alpha-value>)',
+  				foreground: 'hsl(var(--card-foreground) / <alpha-value>)'
   			},
   			popover: {
-  				DEFAULT: 'oklch(var(--popover))',
-  				foreground: 'oklch(var(--popover-foreground))'
+  				DEFAULT: 'hsl(var(--popover) / <alpha-value>)',
+  				foreground: 'hsl(var(--popover-foreground) / <alpha-value>)'
   			},
   			primary: {
-  				DEFAULT: 'oklch(var(--primary))',
-  				foreground: 'oklch(var(--primary-foreground))'
+  				DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
+  				foreground: 'hsl(var(--primary-foreground) / <alpha-value>)'
   			},
   			secondary: {
-  				DEFAULT: 'oklch(var(--secondary))',
-  				foreground: 'oklch(var(--secondary-foreground))'
+  				DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
+  				foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)'
   			},
   			muted: {
-  				DEFAULT: 'oklch(var(--muted))',
-  				foreground: 'oklch(var(--muted-foreground))'
+  				DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
+  				foreground: 'hsl(var(--muted-foreground) / <alpha-value>)'
   			},
   			accent: {
-  				DEFAULT: 'oklch(var(--accent))',
-  				foreground: 'oklch(var(--accent-foreground))'
+  				DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
+  				foreground: 'hsl(var(--accent-foreground) / <alpha-value>)'
   			},
   			destructive: {
-  				DEFAULT: 'oklch(var(--destructive))',
-  				foreground: 'oklch(var(--destructive-foreground))'
+  				DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
+  				foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)'
   			},
-  			border: 'oklch(var(--border))',
-  			input: 'oklch(var(--input))',
-  			ring: 'oklch(var(--ring))',
+  			border: 'hsl(var(--border) / <alpha-value>)',
+  			input: 'hsl(var(--input) / <alpha-value>)',
+  			ring: 'hsl(var(--ring) / <alpha-value>)',
   			sidebar: {
   				DEFAULT: 'hsl(var(--sidebar-background))',
   				foreground: 'hsl(var(--sidebar-foreground))',
   				primary: 'hsl(var(--sidebar-primary))',
-  				'primary-foreground': 'oklch(var(--sidebar-primary-foreground))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground) / <alpha-value>)',
   				accent: 'hsl(var(--sidebar-accent))',
-  				'accent-foreground': 'oklch(var(--sidebar-accent-foreground))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground) / <alpha-value>)',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))',
   				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))'
   			},
   			chart: {
-  				'1': 'oklch(var(--chart-1))',
-  				'2': 'oklch(var(--chart-2))',
-  				'3': 'oklch(var(--chart-3))',
-  				'4': 'oklch(var(--chart-4))',
-  				'5': 'oklch(var(--chart-5))'
+  				'1': 'hsl(var(--chart-1) / <alpha-value>)',
+  				'2': 'hsl(var(--chart-2) / <alpha-value>)',
+  				'3': 'hsl(var(--chart-3) / <alpha-value>)',
+  				'4': 'hsl(var(--chart-4) / <alpha-value>)',
+  				'5': 'hsl(var(--chart-5) / <alpha-value>)'
   			}
   		},
   		fontFamily: {

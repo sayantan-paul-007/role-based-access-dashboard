@@ -40,7 +40,7 @@ const AppSidebar = () => {
   return (
     <Sidebar>
       <SidebarHeader>
-         <Logo /> 
+         <Logo size={34} /> 
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
