@@ -9,7 +9,7 @@ export default function Logo({size}:LogoProps){
     const pathname = usePathname();
     return(
     <Link href='/'>
-        <div className={`flex flex-row items-center justify-start pt-6 pb-4 ${pathname === '/dashboard' ? 'px-2' : ''}   gap-2 `}>
+        <div className={`flex flex-row items-center justify-start pt-6 pb-4 ${pathname.startsWith('/dashboard') ? 'px-2' : ''}   gap-2 `}>
              <LayoutDashboard size={size} className="text-primary" />
             <h1 className="text-[28px] font-bold">SpectraPanel</h1> 
         </div> 

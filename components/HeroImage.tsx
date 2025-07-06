@@ -19,7 +19,7 @@ const HeroImage = () => {
       <Image
           src={theme === 'dark' ? hero_dark : hero_light}
           alt={`Hero ${theme}`}
-          className='w-full md:w-3/4 rounded-xl shadow-[0_0_60px_20px_theme(colors.primary)]'
+          className='w-full md:w-5/6 rounded-2xl shadow-[0_0_60px_20px_theme(colors.primary)]'
         />
     </>
   )

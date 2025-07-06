@@ -1,4 +1,4 @@
-
+'use client'
 import { HomeIcon, Tag, ShoppingBasket, Group } from "lucide-react"
 import {
   Sidebar,
@@ -12,8 +12,8 @@ import {
 } from "@/components/ui/sidebar"
 import Link from "next/link"
 import Logo from "../logo"
- 
-// Menu items.
+import { usePathname } from "next/navigation"
+
 const items = [
   {
         name:'Home',
@@ -37,6 +37,7 @@ const items = [
     }
 ]
 const AppSidebar = () => {
+  const pathname = usePathname();
   return (
     <Sidebar>
       <SidebarHeader>
@@ -47,7 +48,7 @@ const AppSidebar = () => {
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
-                <SidebarMenuItem key={item.name}>
+                <SidebarMenuItem key={item.name} className={` ${pathname.startsWith(item.href)?'bg-sidebar-accent':''} rounded-md`}>
                   <SidebarMenuButton asChild className="flex items-center gap-3 h-10">
                     <Link href={item.href}>
                       <item.icon style={{ width: 20, height: 20 }} />
